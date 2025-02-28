@@ -1,0 +1,54 @@
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { initGA, logPageView } from './utils/analytics';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import Process from './components/Process';
+import TechStack from './components/TechStack';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Terms from './components/Terms';
+
+// Create a component to track page views
+function PageTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    logPageView();
+  }, [location]);
+
+  return null;
+}
+
+function App() {
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  return (
+    <Router>
+      <div className="min-h-screen bg-gray-50">
+        <PageTracker />
+        <Routes>
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <Hero />
+              {/* <About /> */}
+              <Services />
+              <Process />
+              <TechStack />
+              <Contact />
+              <Footer />
+            </>
+          } />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App; 
