@@ -45,10 +45,10 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="text-center">
           <div className="inline-block animate-fade-in-up">
-            <span className={`inline-flex items-center px-4 py-1 rounded-full text-sm font-medium ${statusConfig.styles} mb-8 shadow-sm hover:shadow-md transition-shadow duration-200`}>
+            {/* <span className={`inline-flex items-center px-4 py-1 rounded-full text-sm font-medium ${statusConfig.styles} mb-8 shadow-sm hover:shadow-md transition-shadow duration-200`}>
               {statusConfig.message}
               <span className={`ml-2 h-2 w-2 rounded-full ${statusConfig.dotStyle} animate-pulse`}></span>
-            </span>
+            </span> */}
           </div>
           
           <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl animate-fade-in-up animation-delay-200">
