@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { logEvent } from '../utils/analytics';
 
-console.log(process.env);
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -77,12 +76,12 @@ const Contact = () => {
       );
 
       console.log('Email sent successfully:', result);
-      handleServerResponse(true, "Thank you for your message! I'll get back to you soon.");
+      handleServerResponse(true, "Thanks for reaching out! We're excited to hear from you and will get back to you within 24 hours.");
     } catch (error) {
       console.error('Failed to send email:', error);
       handleServerResponse(
         false, 
-        error.message || "There was an error sending your message. Please try again later."
+        error.message || "Oops! Something went wrong. Please try again or reach out via WhatsApp - we're always available there!"
       );
     }
   };
@@ -109,6 +108,7 @@ const Contact = () => {
           hover:shadow-xl
           group
         "
+        onClick={handleWhatsAppClick}
       >
         <svg 
           className="w-7 h-7" 
@@ -127,7 +127,7 @@ const Contact = () => {
           whitespace-nowrap
           text-sm font-medium
         ">
-          Chat on WhatsApp
+          Quick chat with us!
         </span>
       </a>
 
@@ -141,22 +141,25 @@ const Contact = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent sm:text-4xl">
-              Let's Work Together
+              Ready to Start Something Great?
             </h2>
             <p className="mt-4 text-xl text-gray-600">
-              Have a project in mind? Get in touch!
+              We'd love to hear about your project! Let's chat and see how we can help bring your ideas to life.
+            </p>
+            <p className="mt-2 text-sm text-gray-500">
+              Quick response guaranteed - we're always excited to connect with new clients!
             </p>
           </div>
 
           {/* Divider */}
           <div className="mt-12 mb-8 flex items-center justify-center">
             <div className="h-px w-full max-w-sm bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-            <span className="mx-4 text-gray-400">or</span>
+            <span className="mx-4 text-gray-400">or reach out directly</span>
             <div className="h-px w-full max-w-sm bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
           </div>
 
           <div className="mt-8 max-w-3xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="space-y-8">
               {/* Name Input */}
               <div className="relative">
                 <input
@@ -243,7 +246,7 @@ const Contact = () => {
                     ${formState.message ? 'text-gray-600' : 'text-gray-500'}
                   `}
                 >
-                  Your Message
+                  Tell us about your project
                 </label>
               </div>
 
@@ -272,7 +275,7 @@ const Contact = () => {
                   `}
                 >
                   <span className={`transition-opacity duration-200 ${status.submitting ? 'opacity-0' : 'opacity-100'}`}>
-                    {status.submitted ? 'Message Sent!' : 'Send Message'}
+                    {status.submitted ? 'Message Sent! 🎉' : 'Let\'s Connect!'}
                   </span>
                   {status.submitting && (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -284,25 +287,12 @@ const Contact = () => {
                   )}
                 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </section>
     </>
   );
 };
-
-const ContactMethod = ({ icon, title, value, href }) => (
-  <a
-    href={href}
-    className="group flex items-center p-4 rounded-lg bg-white/70 backdrop-blur-sm border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg"
-  >
-    <span className="text-2xl group-hover:scale-110 transition-transform duration-300">{icon}</span>
-    <div className="ml-4">
-      <p className="text-sm text-gray-500">{title}</p>
-      <p className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{value}</p>
-    </div>
-  </a>
-);
 
 export default Contact; 

@@ -2,79 +2,103 @@ import React from 'react';
 
 const Terms = () => {
   return (
-    <div className="min-h-screen bg-gray-100 py-20">
-      <div className="max-w-3xl mx-auto px-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Terms of Service</h1>
-        
-        <div className="bg-white shadow-md rounded-lg p-6 space-y-6">
-          <section>
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">1. Services</h2>
-            <p className="text-gray-600">
-              DevLuz offers web development services including full-stack development, landing pages, and backend solutions. 
-              We are committed to delivering high-quality work and collaborating closely with clients to achieve the best possible outcomes.
-            </p>
-          </section>
+    <div className="min-h-screen bg-gray-50 py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white shadow-lg rounded-xl p-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">Terms of Service</h1>
+          <p className="text-gray-600 mb-8 text-lg">
+            Simple, fair terms for working together on your project
+          </p>
+          
+          <div className="space-y-8">
+            <section>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">1. What We Do</h2>
+              <p className="text-gray-600 leading-relaxed">
+                DevLuz is a small web development team that creates custom websites, web applications, 
+                and provides technical consulting. We're just starting out but committed to delivering 
+                quality work. Every project starts with a clear conversation about what you need and 
+                what we can deliver.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">2. Project Terms</h2>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Project scope and deliverables will be clearly defined before work begins to ensure transparency.</li>
-              <li>Any changes to the project scope may impact cost and timeline, but we will always communicate these adjustments promptly.</li>
-              <li>Final approval from the client is required before project completion to ensure satisfaction.</li>
-              <li>Payment terms will be discussed and mutually agreed upon before starting the project.</li>
-            </ul>
-          </section>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">2. How Payment Works</h2>
+              <div className="text-gray-600 leading-relaxed space-y-2">
+                <p>• We ask for 30-50% upfront to get started (we're flexible based on project size)</p>
+                <p>• The rest is due when we finish and you're happy with the work</p>
+                <p>• For ongoing work, we bill monthly</p>
+                <p>• If payment is more than 30 days late, we may pause work on future projects</p>
+                <p>• We understand cash flow challenges - just talk to us if you need to work something out</p>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">3. Intellectual Property</h2>
-            <p className="text-gray-600">
-              Clients receive full rights to the final work upon complete payment. DevLuz may showcase completed projects 
-              in portfolios or promotional materials unless otherwise agreed upon.
-            </p>
-          </section>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">3. Project Timelines</h2>
+              <p className="text-gray-600 leading-relaxed">
+                We'll give you our best estimate on timing, but we're learning too! If requirements 
+                change or we run into unexpected challenges, we'll let you know right away. We believe 
+                in honest communication - if something's taking longer, we'll explain why and adjust 
+                expectations together.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">4. Communication</h2>
-            <p className="text-gray-600">
-              Communication will be through agreed channels. We aim to respond within 24-48 business hours and maintain clear, 
-              transparent communication throughout the project.
-            </p>
-          </section>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">4. Who Owns What</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Once you've paid in full, the custom code we write for your project is yours! 
+                We might use general coding techniques and tools that we've learned, and we'd 
+                like to showcase your project in our portfolio (with your permission). Any 
+                third-party tools or libraries remain under their original licenses.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">5. Termination</h2>
-            <p className="text-gray-600">
-              If either party needs to end the agreement, a written notice is required. In such cases, payment will be required 
-              for the work completed up to that point. We will ensure a smooth handover and offer support to transition the project if needed.
-            </p>
-          </section>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">5. After We Launch</h2>
+              <p className="text-gray-600 leading-relaxed">
+                We'll fix any bugs that pop up in the first 30 days at no charge - that's on us! 
+                After that, we're happy to help with updates, new features, or maintenance for 
+                our standard hourly rate. We want your project to succeed long-term.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">6. Limitation of Liability</h2>
-            <p className="text-gray-600">
-              We are committed to providing reliable services, but in rare cases where unforeseen issues arise, we will work 
-              proactively with clients to find reasonable solutions. While we cannot be responsible for indirect losses such as 
-              business downtime or lost revenue, our goal is to resolve any concerns effectively and professionally.
-            </p>
-          </section>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">6. The Fine Print</h2>
+              <div className="text-gray-600 leading-relaxed space-y-2">
+                <p>• We'll do our best work, but we can't guarantee your site will make you rich (we wish we could!)</p>
+                <p>• If something goes wrong that's clearly our fault, we'll make it right</p>
+                <p>• We're based in India and follow Indian law for any disputes</p>
+                <p>• If we can't work together anymore, we'll handle it professionally and transfer everything cleanly</p>
+                <p>• We take your privacy seriously and won't share your business info with anyone</p>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">7. Refund Policy</h2>
-            <p className="text-gray-600">
-              We believe in fair and transparent dealings. Refunds will be considered on a case-by-case basis, ensuring fairness for both parties. 
-              If work has begun, partial refunds may be issued based on the completed progress. Once a project is completed and approved by the client, 
-              refunds will not be available. However, we are open to discussing concerns and making reasonable adjustments where possible.
-            </p>
-          </section>
+            <section className="bg-blue-50 p-6 rounded-lg border border-blue-100">
+              <h2 className="text-lg font-semibold text-blue-900 mb-3">Our Promise to You</h2>
+              <p className="text-blue-800 leading-relaxed">
+                We're a small team just starting out, which means your project gets our full attention 
+                and dedication. We'll be honest about what we can do, communicate clearly throughout 
+                the process, and do everything we can to make your project successful. Your success 
+                helps us build our reputation, so we're genuinely invested in getting it right.
+              </p>
+            </section>
 
-          <div className="text-sm text-gray-500 border-t pt-4">
-            Last updated: {new Date().toLocaleDateString()}
+            <div className="border-t border-gray-200 pt-6 mt-8">
+              <p className="text-sm text-gray-500">
+                Last updated: {new Date().toLocaleDateString('en-US', { 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}
+              </p>
+              <p className="text-sm text-gray-500 mt-2">
+                Questions about these terms? Just ask us - we're happy to explain anything!
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
 
 export default Terms;

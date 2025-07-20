@@ -21,52 +21,54 @@ const Process = () => {
   const steps = [
     {
       number: "01",
-      title: "Discovery & Planning",
-      description: "Deep dive into your business needs and objectives",
-      icon: "🎯",
+      title: "Let's Chat About Your Idea",
+      description: "We'll have a friendly conversation about what you need and how we can help make it happen",
+      icon: "☕",
       gradient: "from-blue-400 to-blue-500",
       details: [
-        "Requirements gathering",
-        "Technical architecture",
-        "Project timeline",
-        "Resource planning"
+        "Understanding your goals",
+        "Discussing your budget",
+        "Planning the timeline",
+        "No technical jargon - just honest talk"
       ]
     },
     {
       number: "02",
-      title: "Design & Prototyping",
-      description: "Creating intuitive and engaging user experiences",
-      icon: "✨",
+      title: "Design & Planning",
+      description: "We'll create a plan and show you exactly what we're going to build before we start coding",
+      icon: "📋",
       gradient: "from-indigo-400 to-indigo-500",
       details: [
-        "UI/UX design",
-        "Interactive prototypes",
-        "Design system",
-        "User feedback"
+        "Simple wireframes you'll understand",
+        "Clear project milestones",
+        "Regular check-ins with you",
+        "Adjustments based on your feedback"
       ]
     },
     {
       number: "03",
-      title: "Development",
-      description: "Building with modern technologies and best practices",
+      title: "Building Your Solution",
+      description: "Time to code! We'll keep you updated every step of the way and show you progress regularly",
       icon: "⚡",
       gradient: "from-purple-400 to-purple-500",
       details: [
-        "Clean code",
-        "Regular updates",
-        "Quality assurance",
-        "Performance optimization"
+        "Clean, maintainable code",
+        "Weekly progress updates",
+        "Testing as we go",
+        "You can see it taking shape"
       ]
     },
     {
       number: "04",
-      title: "Launch & Support",
-      description: "Ensuring smooth deployment and ongoing maintenance",
+      title: "Launch & We've Got Your Back",
+      description: "We'll help you go live and make sure everything works perfectly. Then we're here if you need us",
       icon: "🚀",
       gradient: "from-pink-400 to-purple-500",
       details: [
-        "Deployment",
-        "Maintenance",
+        "Smooth deployment",
+        "We'll teach you how to use it",
+        "Quick fixes if anything goes wrong",
+        "Ongoing support when you need it"
       ]
     }
   ];
@@ -82,10 +84,10 @@ const Process = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent sm:text-4xl">
-            Development Process
+            How We Work Together
           </h2>
           <p className="mt-4 text-xl text-gray-600">
-            A systematic approach to bringing your ideas to life
+            A straightforward process that keeps you involved every step of the way
           </p>
         </div>
 
@@ -154,9 +156,36 @@ const Process = () => {
             </div>
           ))}
         </div>
+        
+        {/* Personal touch section */}
+        <div className="mt-20 text-center">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Work With a Small Team Like Ours?</h3>
+            <p className="text-lg text-gray-600 mb-8">
+              We may be just getting started, but that means you get our full attention and dedication to making your project successful.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-3xl mb-3">🎯</div>
+                <h4 className="font-semibold text-gray-900 mb-2">100% Focus</h4>
+                <p className="text-sm text-gray-600">Every project gets our complete attention</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">💬</div>
+                <h4 className="font-semibold text-gray-900 mb-2">Direct Communication</h4>
+                <p className="text-sm text-gray-600">You talk directly to the developers</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">🌱</div>
+                <h4 className="font-semibold text-gray-900 mb-2">Growing Together</h4>
+                <p className="text-sm text-gray-600">Your success helps us build our reputation</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default Process; 
+export default Process;

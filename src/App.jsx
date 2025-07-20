@@ -37,7 +37,7 @@ function App() {
             <>
               <Navbar />
               <Hero />
-              {/* <About /> */}
+              <About />
               <Services />
               <Process />
               <TechStack />
