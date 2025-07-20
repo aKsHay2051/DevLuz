@@ -52,6 +52,7 @@ const Contact = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
+    
     setStatus(prevStatus => ({ ...prevStatus, submitting: true }));
 
     // Track form submission attempt
@@ -65,17 +66,15 @@ const Contact = () => {
         to_name: 'DevLuz', // You can customize this
       };
 
-      console.log('Sending email with params:', templateParams);
-      console.log('Using service ID:', process.env.REACT_APP_EMAILJS_SERVICE_ID);
-      console.log('Using template ID:', process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
 
-      const result = await emailjs.send(
+       await emailjs.send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         templateParams
       );
 
-      console.log('Email sent successfully:', result);
+      
+
       handleServerResponse(true, "Thanks for reaching out! We're excited to hear from you and will get back to you within 24 hours.");
     } catch (error) {
       console.error('Failed to send email:', error);
@@ -264,8 +263,8 @@ const Contact = () => {
               {/* Submit Button */}
               <div className="flex justify-center">
                 <button
-                  type="submit"
-                  disabled={status.submitting}
+                  onClick={handleSubmit}
+                  // disabled={status.submitting}
                   className={`
                     relative w-full sm:w-auto px-8 py-3 rounded-lg font-medium text-white
                     transition-all duration-300 transform
