@@ -38,18 +38,19 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent' // Slightly more opaque when scrolled
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
-            <span className={`text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent transform transition-all duration-300 ${
+            {/* DevLuz logo text with brand gradient */}
+            <span className={`text-2xl font-bold bg-gradient-to-r from-blue-800 to-emerald-600 bg-clip-text text-transparent transform transition-all duration-300 ${
               isScrolled ? 'scale-90' : ''
             }`}>
               DevLuz
             </span>
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="flex items-center sm:hidden mobile-menu-container">
             <button
@@ -60,23 +61,24 @@ const Navbar = () => {
               className={`
                 inline-flex items-center justify-center p-2 rounded-lg
                 transition-all duration-300
-                ${isScrolled ? 'hover:bg-gray-100' : 'hover:bg-white/20'}
-                ${isOpen ? 'bg-gray-100' : ''}
+                ${isScrolled ? 'hover:bg-blue-50' : 'hover:bg-white/20'} {/* Hover color slightly themed */}
+                ${isOpen ? 'bg-blue-50' : ''} {/* Active background slightly themed */}
               `}
               aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
               <div className="relative w-6 h-6">
+                {/* Hamburger icon lines using a darker gray for contrast, or a subtle blue */}
                 <span className={`
-                  absolute w-6 h-0.5 bg-gray-700 transform transition-all duration-300 ease-in-out
+                  absolute w-6 h-0.5 bg-gray-800 transform transition-all duration-300 ease-in-out
                   ${isOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'}
                 `}></span>
                 <span className={`
-                  absolute w-6 h-0.5 bg-gray-700 transform transition-all duration-300 ease-in-out
+                  absolute w-6 h-0.5 bg-gray-800 transform transition-all duration-300 ease-in-out
                   ${isOpen ? 'opacity-0' : 'opacity-100'}
                 `}></span>
                 <span className={`
-                  absolute w-6 h-0.5 bg-gray-700 transform transition-all duration-300 ease-in-out
+                  absolute w-6 h-0.5 bg-gray-800 transform transition-all duration-300 ease-in-out
                   ${isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'}
                 `}></span>
               </div>
@@ -95,8 +97,8 @@ const Navbar = () => {
                 ml-4 px-4 py-2 rounded-lg font-medium
                 transition-all duration-200 transform hover:scale-105
                 ${isScrolled
-                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:shadow-lg'
-                  : 'bg-white/20 backdrop-blur-sm hover:bg-white/30 text-gray-900'
+                  ? 'bg-gradient-to-r from-blue-700 to-emerald-600 text-white hover:shadow-lg hover:from-blue-800 hover:to-emerald-700' // Themed gradient
+                  : 'bg-white/20 backdrop-blur-sm hover:bg-white/30 text-gray-900' // Still uses white/gray background, text remains dark
                 }
               `}
             >
@@ -107,7 +109,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu overlay */}
-      <div 
+      <div
         className={`
           fixed inset-0 bg-gray-900/20 backdrop-blur-sm transition-opacity duration-300
           sm:hidden
@@ -150,8 +152,8 @@ const NavLink = ({ href, children, isScrolled }) => (
       px-3 py-2 rounded-lg font-medium
       transition-colors duration-200
       ${isScrolled
-        ? 'text-gray-700 hover:bg-gray-100'
-        : 'text-gray-900 hover:bg-white/20'
+        ? 'text-gray-700 hover:text-emerald-600 hover:bg-blue-50' // Text color subtle, hover text vibrant green, hover bg light blue
+        : 'text-gray-900 hover:text-emerald-600 hover:bg-white/20' // Text color dark, hover text vibrant green, hover bg slightly transparent white
       }
     `}
   >
@@ -165,7 +167,7 @@ const MobileNavLink = ({ href, children, onClick, style }) => (
     onClick={onClick}
     className="
       block px-4 py-3 rounded-lg text-gray-700 font-medium
-      hover:bg-gray-50 active:bg-gray-100
+      hover:bg-blue-50 active:bg-blue-100 // Themed hover/active backgrounds
       transition-all duration-200
       animate-fade-in-up
     "
@@ -175,4 +177,4 @@ const MobileNavLink = ({ href, children, onClick, style }) => (
   </a>
 );
 
-export default Navbar; 
+export default Navbar;

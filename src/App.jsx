@@ -29,7 +29,8 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      {/* Updated the main app background to a subtle brand-aligned gradient */}
+      <div className="min-h-screen bg-gradient-to-br from-white to-blue-50">
         <PageTracker />
         <Routes>
           <Route path="/terms" element={<Terms />} />
@@ -51,4 +52,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;
