@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { logEvent } from '../utils/analytics';
 
-
 const Contact = () => {
   const [formState, setFormState] = useState({
     name: '',
@@ -14,6 +13,7 @@ const Contact = () => {
     submitting: false,
     info: { error: false, msg: null }
   });
+  const [errors, setErrors] = useState({}); // New state for validation errors
 
   // Initialize EmailJS
   useEffect(() => {
@@ -34,6 +34,7 @@ const Contact = () => {
         email: '',
         message: ''
       });
+      setErrors({}); // Clear errors on successful submission
     } else {
       setStatus({
         submitted: false,
@@ -43,15 +44,62 @@ const Contact = () => {
     }
   };
 
+  // Basic validation function
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formState.name.trim()) {
+      newErrors.name = 'Name is required.';
+    }
+    if (!formState.email.trim()) {
+      newErrors.email = 'Email is required.';
+    } else if (!/\S+@\S+\.\S+/.test(formState.email)) {
+      newErrors.email = 'Email address is invalid.';
+    }
+    if (!formState.message.trim()) {
+      newErrors.message = 'Message is required.';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; // Return true if no errors
+  };
+
   const handleChange = e => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormState(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+
+    // Clear specific error as user types
+    if (errors[name]) {
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        [name]: undefined
+      }));
+    }
+    // Also clear general submission status messages when user starts typing again after a submission attempt
+    if (status.info.msg) {
+        setStatus(prevStatus => ({
+            ...prevStatus,
+            info: { error: false, msg: null },
+            submitted: false // Reset submitted state as well
+        }));
+    }
   };
 
   const handleSubmit = async e => {
     e.preventDefault();
+
+    // Run validation before attempting submission
+    const isValid = validateForm();
+
+    if (!isValid) {
+      setStatus(prevStatus => ({
+        ...prevStatus,
+        info: { error: true, msg: 'Please correct the errors in the form.' }
+      }));
+      logEvent('Contact', 'Form Validation Failed', 'Contact Form');
+      return; // Stop submission if validation fails
+    }
 
     setStatus(prevStatus => ({ ...prevStatus, submitting: true }));
 
@@ -66,14 +114,11 @@ const Contact = () => {
         to_name: 'DevLuz', // You can customize this
       };
 
-
-        await emailjs.send(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID,
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-          templateParams
-        );
-
-
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
 
       handleServerResponse(true, "Thanks for reaching out! We're excited to hear from you and will get back to you within 24 hours.");
     } catch (error) {
@@ -175,7 +220,8 @@ const Contact = () => {
                     peer w-full px-4 py-3 rounded-lg border-2
                     bg-white/70 backdrop-blur-sm
                     transition-all duration-300 outline-none
-                    border-gray-200 focus:border-emerald-400 focus:shadow-lg {/* Focus border to a logo accent color */}
+                    border-gray-200 focus:border-emerald-400 focus:shadow-lg
+                    ${errors.name ? 'border-red-500' : ''} {/* Add red border on error */}
                   `}
                   placeholder=" "
                   disabled={status.submitting}
@@ -186,10 +232,12 @@ const Contact = () => {
                     absolute left-4 -top-2.5 text-sm bg-white px-2
                     transition-all duration-200 pointer-events-none
                     ${formState.name ? 'text-gray-600' : 'text-gray-500'}
+                    ${errors.name ? 'text-red-500' : ''} {/* Label color on error */}
                   `}
                 >
                   Your Name
                 </label>
+                {errors.name && <p className="mt-1 text-red-500 text-xs">{errors.name}</p>} {/* Error message */}
               </div>
 
               {/* Email Input */}
@@ -205,7 +253,8 @@ const Contact = () => {
                     peer w-full px-4 py-3 rounded-lg border-2
                     bg-white/70 backdrop-blur-sm
                     transition-all duration-300 outline-none
-                    border-gray-200 focus:border-emerald-400 focus:shadow-lg {/* Focus border to a logo accent color */}
+                    border-gray-200 focus:border-emerald-400 focus:shadow-lg
+                    ${errors.email ? 'border-red-500' : ''} {/* Add red border on error */}
                   `}
                   placeholder=" "
                   disabled={status.submitting}
@@ -216,10 +265,12 @@ const Contact = () => {
                     absolute left-4 -top-2.5 text-sm bg-white px-2
                     transition-all duration-200 pointer-events-none
                     ${formState.email ? 'text-gray-600' : 'text-gray-500'}
+                    ${errors.email ? 'text-red-500' : ''} {/* Label color on error */}
                   `}
                 >
                   Email Address
                 </label>
+                {errors.email && <p className="mt-1 text-red-500 text-xs">{errors.email}</p>} {/* Error message */}
               </div>
 
               {/* Message Input */}
@@ -235,7 +286,8 @@ const Contact = () => {
                     peer w-full px-4 py-3 rounded-lg border-2
                     bg-white/70 backdrop-blur-sm
                     transition-all duration-300 outline-none resize-none
-                    border-gray-200 focus:border-emerald-400 focus:shadow-lg {/* Focus border to a logo accent color */}
+                    border-gray-200 focus:border-emerald-400 focus:shadow-lg
+                    ${errors.message ? 'border-red-500' : ''} {/* Add red border on error */}
                   `}
                   placeholder=" "
                   disabled={status.submitting}
@@ -246,10 +298,12 @@ const Contact = () => {
                     absolute left-4 -top-2.5 text-sm bg-white px-2
                     transition-all duration-200 pointer-events-none
                     ${formState.message ? 'text-gray-600' : 'text-gray-500'}
+                    ${errors.message ? 'text-red-500' : ''} {/* Label color on error */}
                   `}
                 >
                   Tell us about your project
                 </label>
+                {errors.message && <p className="mt-1 text-red-500 text-xs">{errors.message}</p>} {/* Error message */}
               </div>
 
               {/* Status Message */}
@@ -267,7 +321,7 @@ const Contact = () => {
               <div className="flex justify-center">
                 <button
                   onClick={handleSubmit}
-                  // disabled={status.submitting} /* Re-enable this after testing if needed */
+                  disabled={status.submitting} // Re-enabled
                   className={`
                     relative w-full sm:w-auto px-8 py-3 rounded-lg font-medium text-white
                     transition-all duration-300 transform
