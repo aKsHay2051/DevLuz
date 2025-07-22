@@ -45,7 +45,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-2">
               <li>
                 <a
-                  href="https://www.fiverr.com/yourusername"
+                  href="https://www.fiverr.com/s/ZmvdGqa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-emerald-500 transition-colors duration-200" // Hover color changed to vibrant green
