@@ -1,0 +1,16 @@
+# robots.txt for DevLuz.com
+
+# User-agent: * means this applies to all web crawlers.
+User-agent: *
+
+# Disallow: /admin/ - Blocks crawlers from your admin panel (if you have one)
+# Disallow: /private/ - Blocks private client areas
+# Disallow: /temp/ - Blocks temporary or incomplete pages
+# Disallow: /search - Generally good to disallow internal search results to avoid duplicate content
+
+# Allow: / - By default, all pages are allowed unless disallowed.
+# Explicitly allowing is usually not necessary for the root, but can be for specific sub-paths.
+
+# Sitemap: Tells crawlers where to find your XML sitemap.
+# Replace with your actual sitemap URL. You'll generate this next.
+Sitemap: https://www.yourwebsite.com/sitemap.xml
