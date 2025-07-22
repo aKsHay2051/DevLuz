@@ -7,10 +7,10 @@ const Terms = () => {
         <div className="bg-white shadow-lg rounded-xl p-8">
           {/* Main heading with brand gradient */}
           <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-800 to-emerald-600 bg-clip-text text-transparent mb-4">
-            Terms of Service
+            Our Working Terms
           </h1>
           <p className="text-gray-600 mb-8 text-lg">
-            Simple, fair terms for working together on your project
+            Simple, fair terms for working together on your project. These terms help ensure a smooth collaboration for both of us.
           </p>
 
           <div className="space-y-8">
@@ -18,72 +18,63 @@ const Terms = () => {
               {/* Section headings with a stronger blue */}
               <h2 className="text-xl font-semibold text-blue-700 mb-4">1. What We Do</h2>
               <p className="text-gray-700 leading-relaxed"> {/* Slightly darker gray for readability */}
-                DevLuz is a small web development team that creates custom websites, web applications,
-                and provides technical consulting. We're just starting out but committed to delivering
-                quality work. Every project starts with a clear conversation about what you need and
-                what we can deliver.
+                DevLuz is a dedicated web development team focused on creating custom websites, web applications,
+                and providing technical consulting. We're passionate about delivering quality work and building
+                strong relationships. Every project begins with a clear discussion about your specific needs,
+                goals, and how we can best achieve them together.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-blue-700 mb-4">2. How Payment Works</h2>
               <div className="text-gray-700 leading-relaxed space-y-2"> {/* Slightly darker gray for readability */}
-                <p>• We ask for 30-50% upfront to get started (we're flexible based on project size)</p>
-                <p>• The rest is due when we finish and you're happy with the work</p>
-                <p>• For ongoing work, we bill monthly</p>
-                <p>• If payment is more than 30 days late, we may pause work on future projects</p>
-                <p>• We understand cash flow challenges - just talk to us if you need to work something out</p>
+                <p>• We usually request a **small initial deposit** to get started. This helps us confirm your commitment and covers initial setup costs. The exact amount will be discussed and agreed upon for each project.</p>
+                <p>• The rest of the payment is due when we finish the project and you are happy with the results.</p>
+                <p>• For bigger projects, we might agree on payments as we complete different parts of the work.</p>
+                <p>• We understand that things happen, so if you ever have a problem with payment, please just talk to us! Open communication helps us find solutions together.</p>
+                <p>• All payment details will be clearly laid out in our project agreement, so there are no surprises.</p>
               </div>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-blue-700 mb-4">3. Project Timelines</h2>
+              <h2 className="text-xl font-semibold text-blue-700 mb-4">3. Project Timelines & Communication</h2>
               <p className="text-gray-700 leading-relaxed"> {/* Slightly darker gray for readability */}
-                We'll give you our best estimate on timing, but we're learning too! If requirements
-                change or we run into unexpected challenges, we'll let you know right away. We believe
-                in honest communication - if something's taking longer, we'll explain why and adjust
-                expectations together.
+                We'll give you our **best estimate for when your project will be ready**. Creating custom web solutions can sometimes involve unexpected twists, but we promise to always keep you in the loop. If anything changes with the timeline, we'll explain why and discuss new expectations with you right away. Your quick feedback and providing us with content we need (like text or images) are super important to keep your project moving smoothly!
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-blue-700 mb-4">4. Who Owns What</h2>
               <p className="text-gray-700 leading-relaxed"> {/* Slightly darker gray for readability */}
-                Once you've paid in full, the custom code we write for your project is yours!
-                We might use general coding techniques and tools that we've learned, and we'd
-                like to showcase your project in our portfolio (with your permission). Any
-                third-party tools or libraries remain under their original licenses.
+                Once you've fully paid for the project, **all the custom code and unique design we've created for you is yours!** We might use general coding methods we've learned, and we'd love to show off your project in our portfolio (only with your permission, of course!). Any tools or services from other companies (like specific fonts or open-source libraries) will still follow their own rules.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-blue-700 mb-4">5. After We Launch</h2>
               <p className="text-gray-700 leading-relaxed"> {/* Slightly darker gray for readability */}
-                We'll fix any bugs that pop up in the first 30 days at no charge - that's on us!
-                After that, we're happy to help with updates, new features, or maintenance for
-                our standard hourly rate. We want your project to succeed long-term.
+                We'll happily fix any bugs or issues that appear in the first **30 days** after your project goes live, at no extra cost to you. This covers problems that were part of our original development work. If you need updates, new features, or ongoing support after this period, we're here to help at our regular rates, or we can discuss a separate support plan. We want your project to succeed for the long run!
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-blue-700 mb-4">6. The Fine Print</h2>
+              <h2 className="text-xl font-semibold text-blue-700 mb-4">6. Important Notes</h2>
               <div className="text-gray-700 leading-relaxed space-y-2"> {/* Slightly darker gray for readability */}
-                <p>• We'll do our best work, but we can't guarantee your site will make you rich (we wish we could!)</p>
-                <p>• If something goes wrong that's clearly our fault, we'll make it right</p>
-                <p>• We're based in India and follow Indian law for any disputes</p>
-                <p>• If we can't work together anymore, we'll handle it professionally and transfer everything cleanly</p>
-                <p>• We take your privacy seriously and won't share your business info with anyone</p>
+                <p>• We'll always do our very best work, but we can't promise specific business results (like getting lots of sales or being #1 on Google). The success of your business depends on many things, not just the website itself.</p>
+                <p>• If something goes wrong that's clearly our mistake, we are committed to making it right. Your satisfaction is really important to us.</p>
+                <p>• If, for any reason, we can't continue working on your project, we'll make sure all completed work is handed over to you smoothly, and we'll discuss a fair way forward regarding any payments for work already done.</p>
+                <p>• We take your privacy seriously. Any information you share with us about your business or project will be kept confidential.</p>
+                <p>• These terms are a guide for our collaboration. We might update them from time to time, and we'll always let our active clients know about important changes.</p>
               </div>
             </section>
 
-            {/* Our Promise section with vibrant emerald theme */}
+            {/* Our Commitment section with vibrant emerald theme */}
             <section className="bg-emerald-50 p-6 rounded-lg border border-emerald-100">
-              <h2 className="text-lg font-semibold text-emerald-800 mb-3">Our Promise to You</h2>
+              <h2 className="text-lg font-semibold text-emerald-800 mb-3">Our Commitment</h2>
               <p className="text-emerald-700 leading-relaxed">
-                We're a small team just starting out, which means your project gets our full attention
-                and dedication. We'll be honest about what we can do, communicate clearly throughout
-                the process, and do everything we can to make your project successful. Your success
-                helps us build our reputation, so we're genuinely invested in getting it right.
+                As a growing team, your project receives our utmost attention and dedication. We pride ourselves on clear, honest communication throughout
+                every stage of development. We are genuinely invested in your success, as it helps us build our reputation and portfolio. We're excited
+                to collaborate with you and bring your digital vision to life!
               </p>
             </section>
 
@@ -96,7 +87,7 @@ const Terms = () => {
                 })}
               </p>
               <p className="text-sm text-gray-500 mt-2">
-                Questions about these terms? Just ask us - we're happy to explain anything!
+                Questions about these terms? Please don't hesitate to reach out – we're happy to clarify anything!
               </p>
             </div>
           </div>
