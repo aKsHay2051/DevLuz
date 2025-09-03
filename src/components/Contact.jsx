@@ -201,7 +201,7 @@ const Contact = () => {
           <div className="mt-12 mb-8 flex items-center justify-center">
             {/* Divider gradient changed to subtly include logo colors */}
             <div className="h-px w-full max-w-sm bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
-            <span className="mx-4 text-gray-400">or reach out directly</span>
+            <span className="mx-4 text-gray-400"> reach out directly</span>
             <div className="h-px w-full max-w-sm bg-gradient-to-r from-transparent via-emerald-200 to-transparent"></div>
           </div>
 

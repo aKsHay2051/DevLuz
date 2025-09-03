@@ -10,6 +10,7 @@ import TechStack from './components/TechStack';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Terms from './components/Terms';
+import Portfolio from './components/Portfolio';
 
 // Create a component to track page views
 function PageTracker() {
@@ -40,6 +41,7 @@ function App() {
               <Hero />
               <About />
               <Services />
+              <Portfolio/>
               <Process />
               <TechStack />
               <Contact />
